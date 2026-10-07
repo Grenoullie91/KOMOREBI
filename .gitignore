@@ -1,0 +1,33 @@
+# Godot-Importcache und lokale Editordaten
+.godot/
+*.translation
+
+# Erzeugte Artefakte: Release-APK, App Bundle, Test-Screenshots.
+# Die Reproduktion ist in README.md unter "Bauen und testen" beschrieben.
+build/
+artifacts/
+tools/__pycache__/
+
+# Signing-Material: niemals versionieren, weder Keystore noch Passwort.
+# Der Release-Key wird lokal unter signing/ erwartet und mit
+# ./tools/make_release_keystore.sh erzeugt.
+signing/
+*.keystore
+*.jks
+*.p12
+*.pem
+*.pfx
+*.key
+*.p8
+*.env
+
+# Android-Buildvorlage. Godot entpackt sie aus den Export-Templates
+# (--install-android-build-template); sie enthält fertige Bibliotheken
+# von über 100 MB und gehört deshalb nicht ins Repository.
+android/
+android/local.properties
+
+# Play-Credentials, falls sie jemand hier ablegt
+service-account*.json
+*credentials*.json
+google-services.json

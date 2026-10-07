@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 432 432">
+  <!-- Adaptive-Icon-Vordergrund: nur die Figur, kein Hintergrund.
+       Inhalt bleibt im mittleren Sicherheitskreis (ca. 66 % der Kantenlänge),
+       damit Masken mit Beschnitt das Zeichen nicht abschneiden. -->
+  <defs>
+    <radialGradient id="glueh" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffc46b" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#ff8f3c" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ff8f3c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="216" cy="216" r="150" fill="url(#glueh)"/>
+
+  <g transform="translate(216 214)">
+    <g transform="rotate(-8)">
+      <path d="M0 -84 L74 -26 L46 70 L-46 70 L-74 -26 Z"
+            fill="#0e0a1c" stroke="#a98bff" stroke-width="10" stroke-linejoin="round"/>
+    </g>
+    <g transform="rotate(22)">
+      <path d="M0 -84 L74 -26 L46 70 L-46 70 L-74 -26 Z"
+            fill="#0e0a1c" stroke="#5fe9c0" stroke-width="10" stroke-linejoin="round" opacity="0.85"/>
+    </g>
+    <circle cx="0" cy="0" r="24" fill="#ffe9a8"/>
+  </g>
+
+  <g fill="#ffc46b">
+    <circle cx="124" cy="150" r="8"/>
+    <circle cx="306" cy="162" r="6"/>
+    <circle cx="318" cy="272" r="7"/>
+    <circle cx="116" cy="284" r="5"/>
+    <circle cx="216" cy="330" r="6"/>
+  </g>
+</svg>
