@@ -17,6 +17,9 @@ Die OFL 1.1 verlangt, die Lizenz mitzuliefern und die Namen der Autoren
 nicht als Marke zu verwenden. Beides ist hier eingehalten: Komorebi ist ein
 eigenstaendiger Titel und benutzt keinerlei geschuetzte Schrift-Marke.
 
-Die vollstaendige Lizenz liegt der Schriftfamilie bei und ist unter
-https://openfontlicense.org/ abrufbar. Wegen der OFL 1.1 werden die
-Schriftdateien zusammen mit diesem Hinweis weitergegeben.
+Die vollstaendige SIL Open Font License 1.1 liegt in diesem Verzeichnis
+unter OFL.txt. Sie enthaelt auch den Copyright-Hinweis der Inter Project Authors.
+Offizielle Quelle: https://github.com/rsms/inter
+
+Die Schriftdateien werden zusammen mit diesem Lizenzhinweis und
+der vollstaendigen OFL-1.1-Lizenz weitergegeben.

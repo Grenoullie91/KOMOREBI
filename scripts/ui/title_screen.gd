@@ -86,6 +86,12 @@ func _ready() -> void:
 	howto.pressed.connect(func() -> void: navigate.emit("howto", 0))
 	column.add_child(howto)
 
+	var licenses := UI.button("LIZENZEN & CREDITS", "quiet", 48)
+	register_button("licenses", licenses)
+	licenses.pressed.connect(func() -> void: navigate.emit("licenses", 0))
+	column.add_child(licenses)
+	_buttons["licenses"] = licenses
+
 	column.add_child(UI.caption("v1.0  -  ein kleines Premium-Spiel"))
 	_buttons["howto"] = howto
 
