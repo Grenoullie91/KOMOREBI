@@ -24,7 +24,7 @@ Repo: https://github.com/Grenoullie91/KOMOREBI.git
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: ce58d51
+    commit: abcd123
     subdir: .
     output: build/android/komorebi-fdroid.apk
     build:
