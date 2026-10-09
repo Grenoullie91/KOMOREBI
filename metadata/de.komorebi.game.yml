@@ -1,0 +1,28 @@
+Categories:
+  - Games
+
+License: MIT
+
+AutoName: KOMOREBI
+
+Summary: Tap-tap arcade game about destroying shadows before the light fades
+
+Description: |
+  KOMOREBI is a small premium tap-tap arcade game.
+  Destroy shadows before the light disappears.
+
+  The project includes offline license information for
+  KOMOREBI, Inter fonts, and Godot Engine.
+
+WebSite: https://github.com/Grenoullie91/KOMOREBI
+SourceCode: https://github.com/Grenoullie91/KOMOREBI
+IssueTracker: https://github.com/Grenoullie91/KOMOREBI/issues
+
+RepoType: git
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: f522752
+    subdir: .
+    output: build/android/komorebi-release.apk
