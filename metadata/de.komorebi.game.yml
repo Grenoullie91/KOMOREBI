@@ -23,6 +23,6 @@ RepoType: git
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: f522752
+    commit: 9e31ae9
     subdir: .
     output: build/android/komorebi-release.apk
