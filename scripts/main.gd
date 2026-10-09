@@ -129,6 +129,8 @@ func _create_screen(target: String, arg: int) -> AppScreen:
 			return screen
 		"howto":
 			return HowToScreen.new()
+		"licenses":
+			return LicensesScreen.new()
 		"level":
 			var game := GameScreen.new()
 			game.request_screen.connect(goto_screen)
