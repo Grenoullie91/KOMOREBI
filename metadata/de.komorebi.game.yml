@@ -27,3 +27,5 @@ Builds:
     commit: 6006465
     subdir: .
     output: build/android/komorebi-fdroid.apk
+    build:
+      - ./fdroid/build.sh
