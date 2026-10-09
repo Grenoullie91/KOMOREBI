@@ -3,7 +3,7 @@ Categories:
 
 License: MIT
 
-AutoName: KOMOREBI
+Name: KOMOREBI
 
 Summary: Tap-tap arcade game about destroying shadows before the light fades
 
@@ -19,10 +19,11 @@ SourceCode: https://github.com/Grenoullie91/KOMOREBI
 IssueTracker: https://github.com/Grenoullie91/KOMOREBI/issues
 
 RepoType: git
+Repo: https://github.com/Grenoullie91/KOMOREBI.git
 
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: 9e31ae9
+    commit: 6006465
     subdir: .
-    output: build/android/komorebi-release.apk
+    output: build/android/komorebi-fdroid.apk
