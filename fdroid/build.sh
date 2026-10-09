@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+mkdir -p build/android
+
 flatpak run org.godotengine.Godot \
   --headless \
   --path . \
