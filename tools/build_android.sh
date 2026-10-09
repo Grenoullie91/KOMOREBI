@@ -4,10 +4,11 @@ set -Eeuo pipefail
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_DIR"
 
-# Safety boundary: this runner belongs exclusively to the playground.
-if [[ "$PROJECT_DIR" != "$HOME/android-agent-test" ]]; then
-    echo "[ERROR] Refusing to run outside ~/android-agent-test"
+# Safety boundary: require a valid KOMOREBI project root.
+if [[ ! -f "$PROJECT_DIR/project.godot" ]]; then
+    echo "[ERROR] Refusing to run outside a Godot project root."
     exit 90
+
 fi
 
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/Android/Sdk}"
