@@ -44,8 +44,7 @@ Builds:
     srclibs:
       - Godot@ed1daf0bf001b61586d9930840f2f1394092c079
       - reproducible-apk-tools@v0.3.0
-    build:
-      - ./fdroid/build.sh $$Godot$$ $$NDK$$ $$SDK$$
+    build: ./fdroid/build.sh $$Godot$$ $$NDK$$ $$SDK$$
     ndk: 29.0.14206865
     postbuild:
       - strip-nondeterminism -t zip $$OUT$$
