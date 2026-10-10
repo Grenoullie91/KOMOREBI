@@ -36,7 +36,7 @@ Repo: https://github.com/Grenoullie91/KOMOREBI.git
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: 0ac3017d5ccf4244bc9f146232f1471ae159a582
+    commit: ea383b15c08c6a48f0adaaf6ed6520cab3476bd1
     sudo:
       - apt-get update
       - apt-get install -y pkgconf scons g++ strip-nondeterminism
@@ -45,22 +45,7 @@ Builds:
       - Godot@ed1daf0bf001b61586d9930840f2f1394092c079
       - reproducible-apk-tools@v0.3.0
     build:
-      - export ANDROID_SDK_ROOT=$$SDK$$
-      - export ANDROID_NDK_ROOT=$$NDK$$
-      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-      - pushd $$Godot$$
-      - scons -j `nproc` platform=linuxbsd target=editor
-      - scons -j `nproc` platform=android target=template_release arch=arm64
-      - pushd platform/android/java
-      - gradle generateGodotTemplates
-      - popd
-      - popd
-      - mkdir -p ~/.local/share/godot/export_templates/4.7.2.stable
-      - cp $$Godot$$/bin/android_release.apk 
-        ~/.local/share/godot/export_templates/4.7.2.stable/android_release.apk
-      - mkdir -p build/android
-      - $$Godot$$/bin/godot.linuxbsd.editor.x86_64 --headless --path . 
-        --export-release "Android F-Droid" build/android/komorebi-fdroid.apk
+      - ./fdroid/build.sh $$Godot$$ $$NDK$$ $$SDK$$
     ndk: 29.0.14206865
     postbuild:
       - strip-nondeterminism -t zip $$OUT$$
