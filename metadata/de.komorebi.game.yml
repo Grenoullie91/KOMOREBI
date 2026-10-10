@@ -1,22 +1,34 @@
 Categories:
   - Action Game
-
 License: MIT
-
-Name: KOMOREBI
-
-Summary: Tap-tap arcade game about destroying shadows before the light fades
-
-Description: |
-  KOMOREBI is a small premium tap-tap arcade game.
-  Destroy shadows before the light disappears.
-
-  The project includes offline license information for
-  KOMOREBI, Inter fonts, and Godot Engine.
-
+AuthorName: Grenoullie91
+AuthorEmail: patrick@haasarts.de
+AuthorWebSite: https://haasarts.de
 WebSite: https://github.com/Grenoullie91/KOMOREBI
 SourceCode: https://github.com/Grenoullie91/KOMOREBI
 IssueTracker: https://github.com/Grenoullie91/KOMOREBI/issues
+Changelog: https://github.com/Grenoullie91/KOMOREBI/releases
+
+AutoName: KOMOREBI
+Summary: Tap-tap arcade game about destroying shadows before light fades
+Description: |-
+  KOMOREBI is a small tap-tap arcade game made with Godot Engine.
+
+  Shadows drift out of the dark and you tap them away before the light
+  fades. Keep the combo alive, catch the stars and clear eight chapters,
+  then push your score as far as it goes in endless mode.
+
+  Features:
+
+  • Fast arcade gameplay with simple touch controls
+  • Campaign mode with eight chapters
+  • Endless mode with a persistent high score
+  • Combo multipliers and critical hits
+  • Four shadow types, each with its own behaviour
+  • Fully offline: no ads, no tracking, no account, no in-app purchases
+
+  The project ships the license texts for KOMOREBI, the Inter typeface
+  and Godot Engine as part of the game.
 
 RepoType: git
 Repo: https://github.com/Grenoullie91/KOMOREBI.git
@@ -24,8 +36,37 @@ Repo: https://github.com/Grenoullie91/KOMOREBI.git
 Builds:
   - versionName: 1.0.0
     versionCode: 1
-    commit: 134290a
-    subdir: .
+    commit: 0ac3017d5ccf4244bc9f146232f1471ae159a582
+    sudo:
+      - apt-get update
+      - apt-get install -y pkgconf scons g++ strip-nondeterminism
     output: build/android/komorebi-fdroid.apk
+    srclibs:
+      - Godot@ed1daf0bf001b61586d9930840f2f1394092c079
+      - reproducible-apk-tools@v0.3.0
     build:
-      - ./fdroid/build.sh
+      - export ANDROID_SDK_ROOT=$$SDK$$
+      - export ANDROID_NDK_ROOT=$$NDK$$
+      - export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+      - pushd $$Godot$$
+      - scons -j `nproc` platform=linuxbsd target=editor
+      - scons -j `nproc` platform=android target=template_release arch=arm64
+      - pushd platform/android/java
+      - gradle generateGodotTemplates
+      - popd
+      - popd
+      - mkdir -p ~/.local/share/godot/export_templates/4.7.2.stable
+      - cp $$Godot$$/bin/android_release.apk 
+        ~/.local/share/godot/export_templates/4.7.2.stable/android_release.apk
+      - mkdir -p build/android
+      - $$Godot$$/bin/godot.linuxbsd.editor.x86_64 --headless --path . 
+        --export-release "Android F-Droid" build/android/komorebi-fdroid.apk
+    ndk: 29.0.14206865
+    postbuild:
+      - strip-nondeterminism -t zip $$OUT$$
+      - mv $$OUT$$ unaligned.apk
+      - $$reproducible-apk-tools$$/zipalign.py --page-size 16 
+        --pad-like-apksigner --replace unaligned.apk $$OUT$$
+
+AutoUpdateMode: None
+UpdateCheckMode: None
