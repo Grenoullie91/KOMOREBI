@@ -1,0 +1,16 @@
+KOMOREBI is a premium tap-tap arcade game where light fights the shadows.
+
+Destroy shadows before the light disappears and complete chapters by collecting stars.
+
+Features:
+
+• Fast arcade gameplay with simple touch controls
+• Campaign mode with multiple chapters
+• Endless mode for high scores
+• Combo multipliers and critical hits
+• Different shadow types with unique behaviours
+• Offline gameplay
+
+No ads.
+No tracking.
+Works completely offline.

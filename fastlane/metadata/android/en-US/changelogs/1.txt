@@ -1,0 +1,8 @@
+Initial release of KOMOREBI.
+
+Features:
+- Campaign mode
+- Endless mode
+- Combo system
+- Multiple shadow types
+- Offline gameplay
