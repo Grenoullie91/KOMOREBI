@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_app"]
 
-[node name="AppRoot" type="Control"]
+; unique_id ist bewusst fest verdrahtet. Godot vergibt beim Packen einer Szene
+; fuer jeden Knoten ohne gespeicherte unique_id eine zufaellige ID aus einem
+; Krypto-Zufallsgenerator (SceneState::_parse_node -> ResourceUID::create_id).
+; Ohne diese Zeile unterscheidet sich die exportierte .scn - und damit das
+; gebaute APK - bei jedem Build um ein paar Bytes. F-Droid baut reproduzierbar,
+; also muss die ID im Quelltext stehen.
+[node name="AppRoot" type="Control" unique_id=1]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
