@@ -24,8 +24,13 @@ signing/
 # Android-Buildvorlage. Godot entpackt sie aus den Export-Templates
 # (--install-android-build-template); sie enthält fertige Bibliotheken
 # von über 100 MB und gehört deshalb nicht ins Repository.
-android/
-android/local.properties
+#
+# Wichtig: mit führendem Slash auf das Wurzelverzeichnis verankert.
+# Ohne den Slash trifft das Muster jedes Verzeichnis namens "android"
+# und würde auch fastlane/metadata/android/ ausschließen - neue
+# Screenshots oder Übersetzungen wären dann stillschweigend untracked.
+/android/
+/android/local.properties
 
 # Play-Credentials, falls sie jemand hier ablegt
 service-account*.json
